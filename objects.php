@@ -2,48 +2,47 @@
 //1)Газонокосилка
 class Lawn_mover
 {
-    public $power;//мощность
-    public $wire;//шнур для подключения к сети
-    public $button;//кнопка вкл,выкл
-    public $wheels;//колеса
+    private $power;//мощность
+    private $wire;//шнур для подключения к сети
+    private $button;//кнопка вкл,выкл
 
-}
-$myLawn_mower = new Lawn_mover();//создаем объект
-$myLawn_mower->power = 'strong';//сильная
-$myLawn_mower->wire= 220;
-$myLawn_mower->button= 'turn_on/turn_off';//включить/выключить
-$myLawn_mower->wheels= 'small';
 
-public function connect()
-{
-    //подключение провода к сети
-}
-public function turn_on()
-{
-    //включаем газонокосилку
-}
-public function go()
-{
-//косим
-}
-public function turn_off()
-{
-//выключаем газонокосилку
-}
-$myLawn_mower->connect();
-$myLawn_mower->turn_on();
-$myLawn_mower->go();
-$myLawn_mower->turn_off();
+    function __construct(int $power, $wire, $button)
+    {
+        $this->power = $power;
+        $this->wire = $wire;
+        $this->button = $button;
+    }
 
-$myLawn_mower2 = new Lawn_mover();//создаем еще одну газонокосилку
-$myLawn_mower = new Lawn_mover('strong', 220, 'turn_on/turn_off', 'small');//новый слепок
-public function __construct($power, $wire, $button, $wheels)
-{
-    $this -> power = $power;
-    $this -> wire = $wire;
-    $this -> button = $button;
-    $this -> wheels = $wheels;
+    public function getPower()
+    {
+        return $this->power;
+    }
+
+    public function getWire()
+    {
+        return $this->wire;
+    }
+
+    public function getButton()
+    {
+        return $this->button;
+    }
+
+    public function getInfo()
+    {
+        return "{$this->power}" . "{$this->wire}" . "{$this->button}";
+    }
 }
+$myLawn_mower = new Lawn_mover("Сильная", 220, "Вкл/выкл");//создаем объект
+echo "Мощность - " . $myLawn_mower->getPower();
+echo "<br>";
+echo "Провод - " . $myLawn_mower->getWire();
+echo "<br>";
+echo "Кнопка - " . $myLawn_mower->getButton();
+
+
+
 //2)Лейка
 class Watering_can{
     public $spout_with_hole;//носик с отверстием
