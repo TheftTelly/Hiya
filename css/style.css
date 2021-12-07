@@ -1,0 +1,213 @@
+/*Обнуление*/
+*{padding:0;margin:0;border:0;}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display:block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+/*--------------------*/
+
+a{
+    color: inherit;
+}
+.header{
+    height: 100%;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.header__inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+.header__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    flex-wrap: wrap;
+
+}
+.logo {
+    margin-bottom: 20px;
+}
+
+._active{
+    border: 1px solid #CB0E0E;
+}
+.header__input {
+    background: #eeeeee;
+    border-radius: 33px;
+    max-width: 366px;
+    height: 64px;
+    padding: 15px;
+    font-size: 24px;
+    line-height: 33px;
+    margin-left: 20px;
+
+}
+
+.header__input::placeholder{
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+    color: #BABABA;
+}
+.header__input:focus{
+    border: 1px solid #CB0E0E;
+}
+.header__burger{
+    display: none;
+}
+
+.menu__list {
+    display: flex;
+
+}
+.menu__item {
+    padding-right: 36px;
+    font-size: 25px;
+    line-height: 34px;
+    text-align: center;
+    color: #000000;
+    cursor: pointer;
+    transition: all .5s;
+}
+.menu__item:hover{
+    color: #CB0E0E;
+    transition: all .5s;
+}
+
+
+.header__slider {
+    padding-bottom: 50px;
+}
+
+.slider-title {
+    font-size: 38px;
+    line-height: 52px;
+    color: #000000;
+    max-width: 384px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.slick-wrapper {
+    background: #eeeeee;
+    border-radius: 17px;
+    padding-left: 33px;
+    height: 320px;
+}
+
+
+.slider__box-img {
+    border-radius: 23px;
+    height: 231px;
+    width: 157px ;
+}
+.slider__box-title {
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    margin-bottom: 11px;
+}
+.slider__box-autor {
+    font-size: 16px;
+    line-height: 22px;
+    color: #D0434B;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1080px) {
+   
+    .header__burger{
+        display: block;
+        width: 40px;
+        height: 30px;
+        position: absolute;
+        right: 10px;
+        top: 74px;
+        z-index: 6;
+    }
+    .header__burger::after,
+    .header__burger::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: 2px;
+        background-color: #000;
+    }
+    .header__burger::before{
+        top: 0;
+    }
+    .header__burger::after{
+        bottom: 0;
+    }
+    .header__burger span{
+        position: absolute;
+        display: block;
+        width: 40px;
+        top: 15px;
+        height: 2px;
+        background-color: #000;
+    }
+    
+    .menu{
+        transform: translateY(-200%);
+        display: block;
+        background-color: #886239;
+        padding: 10px 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;       
+        z-index: 5; 
+    }
+    .menu--active{
+        transform: translateY(0%);
+    }
+
+    .menu__list {
+        display: block;
+        padding-top: 200px;
+    }
+    .menu__item {
+        margin-bottom: 10px;
+    }
+    .header__input{
+        margin-right: 100px;
+    }
+    
+    
+}
+@media (max-width: 500px){
+    .header__input{
+        padding: 15px 0;
+        margin-right: 0;
+        max-width: 250px;
+    }
+   
+    .slider__box-img{
+        margin-right: 0;
+
+    }
+}
