@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/swiper-bundle.min.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/books.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__top">
+                    <a href="index.html" class="logo">
+                        <img src="images/header-img.png" alt="" class="header-img">
+                    </a>
+                    <form action="search.php" method="post">
+                        <input name="search" type="text" class="header__input" placeholder="Книга или автор">
+                    </form>
+                    <nav class="menu">
+                        <ul class="menu__list">
+                            <li class="menu__item"> <a href="books.html"> Мои книги</a></li>
+                            <li class="menu__item">Уведомление</li>
+                            <li class="menu__item">Войти</li>
+                        </ul>
+                    </nav>
+                    <div class="header__burger">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="slider-title">Мои книги</div>
+                <div class="header__slider">
+                    <div class="slick__inner">
+                        <div class="slick-wrapper">
+                            <div class="slick-slide">
+                                <div class="slider__box">
+                                    <a href="about.html" class="slider__box-link">
+                                        <img src="images/slider-img.jpg" alt="" class="slider__box-img">
+                                    </a>
+                                    <div class="slider__box-title">Ведьмак: Последнее желание</div>
+                                    <div class="slider__box-autor">Анджей Сапговский</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
