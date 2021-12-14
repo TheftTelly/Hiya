@@ -1,29 +1,41 @@
-<!DOCTYPE html>
-<html lang="ru">
-
+<?php
+    session_start();
+?>
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/register.css">
-    <title><?= "Авторизация и регистария"; ?></title>
+    <title>Авт и рег</title>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
-
 <body>
-    <form action="check.php" method = "POST">
-        <h1>Регистрация</h1>
-        <label for="">Логин</label>
-        <input type="text" placeholder = "Введите свой логин" name ="login">
-        <label for="">Фио</label>
-        <input type="text" name="name" placeholder ="Введите имя">
-        <label for="">Пароль</label>
-        <input type="password" name="pass" placeholder = 'Введите пароль'>
-        <button type="submit">зарегистрируйтесь</button>
-        <p>
-            У вас есть аккаунта? - <a href='autrisation.php'>авторизуйтесь</a>
-        </p>
-    </form>
 
+<form action="vendor/signup.php" method="post" enctype="multipart/form-data">
+    <label>ФИО</label>
+    <input type="text" name="full_name" placeholder="Введите свое полное имя">
+    <label>Логин</label>
+    <input type="text" name="login" placeholder="Введите свой логин">
+    <label>Почта</label>
+    <input type="email" name="email" placeholder="Введите свой email">
+    <label>Изображение профиля</label>
+    <input type="file" name="avatar">
+    <label>Пароль</label>
+    <input type="password" name="password" placeholder="Введите пароль">
+    <label>Подтверждение пароля</label>
+    <input type="password" name="password_confirm" placeholder="Подтвердите пароль">
+    <button>Зарегистрироваться</button>
+    <p>
+        У Вас уже есть аккаунт? - <a href="index.php"> Авторизируйтесь</a>
+    </p>
+
+        <?php
+        if ($_SESSION['message']){
+            echo '<p class="msg">' . $_SESSION['message'] . '</p>';
+        }
+        unset ($_SESSION['message']);
+        ?>
+
+</form>
 </body>
 
 </html>
